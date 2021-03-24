@@ -17,6 +17,8 @@ struct NewCodable: Codable {
   var storyTitle: String?
   var author: String
   var createdAt: String
+  var url: String?
+  var storyUrl: String?
 }
 
 extension NewCodable {
@@ -26,6 +28,8 @@ extension NewCodable {
     self.storyTitle = newDB.storyTitle
     self.author = newDB.author
     self.createdAt = newDB.createdAt
+    self.url = newDB.url
+    self.storyUrl = newDB.storyUrl
   }
 }
 

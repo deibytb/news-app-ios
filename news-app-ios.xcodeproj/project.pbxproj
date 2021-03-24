@@ -28,6 +28,7 @@
 		A24BBDAE260B932800F5774D /* DBManager+New.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BBDAD260B932800F5774D /* DBManager+New.swift */; };
 		A24BBDB3260B97CC00F5774D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BBDB2260B97CC00F5774D /* Reachability.swift */; };
 		A24BBDB8260BB3D400F5774D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BBDB7260BB3D400F5774D /* Extensions.swift */; };
+		A24BBDBD260BCC8900F5774D /* NewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BBDBC260BCC8900F5774D /* NewDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		A24BBDAD260B932800F5774D /* DBManager+New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBManager+New.swift"; sourceTree = "<group>"; };
 		A24BBDB2260B97CC00F5774D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A24BBDB7260BB3D400F5774D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A24BBDBC260BCC8900F5774D /* NewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				A24BBD3D260B80E800F5774D /* Main.storyboard */,
 				A24BBD78260B84E600F5774D /* NewsViewController.swift */,
 				A24BBD73260B84D700F5774D /* NewTableViewCell.swift */,
+				A24BBDBC260BCC8900F5774D /* NewDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				A24BBD8B260B85E400F5774D /* APIService.swift in Sources */,
 				A24BBD91260B864100F5774D /* New.swift in Sources */,
 				A24BBD3A260B80E800F5774D /* SceneDelegate.swift in Sources */,
+				A24BBDBD260BCC8900F5774D /* NewDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

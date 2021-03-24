@@ -22,6 +22,8 @@ extension New {
     @NSManaged public var author: String!
     @NSManaged public var createdAt: String!
     @NSManaged public var isHidden: Bool
+    @NSManaged public var url: String?
+    @NSManaged public var storyUrl: String?
 
 }
 

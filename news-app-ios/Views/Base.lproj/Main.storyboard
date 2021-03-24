@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="747.82608695652175" y="113.83928571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--New Detail View Controller-->
         <scene sceneID="3Hm-lm-0mK">
             <objects>
-                <viewController id="IMi-KC-ytd" sceneMemberID="viewController">
+                <viewController id="IMi-KC-ytd" customClass="NewDetailViewController" customModule="news_app_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3e1-Xi-MGE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,6 +106,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="46f-xZ-2NW"/>
+                    <connections>
+                        <outlet property="webView" destination="nja-9P-ojT" id="49a-FV-soM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Tl-wK-bWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

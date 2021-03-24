@@ -42,6 +42,8 @@ extension DBManager {
         newNew.storyTitle = newCodable.storyTitle
         newNew.author = newCodable.author
         newNew.createdAt = newCodable.createdAt
+        newNew.url = newCodable.url
+        newNew.storyUrl = newCodable.storyUrl
         newNew.isHidden = false
         
         do {

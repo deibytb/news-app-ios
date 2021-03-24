@@ -34,7 +34,6 @@ class NewsViewModel {
             self.saveNews(news.hits)
             self.fetchLocalNews()
           } catch {
-            print(error.localizedDescription)
             self.errorMessage?(error.localizedDescription)
           }
         }
@@ -52,7 +51,6 @@ class NewsViewModel {
         self.errorMessage?(msg)
         }
       } else if let news = news {
-        print(news)
         self.news = news.map({ NewCodable(fromDB: $0) })
         self.didUpdate?()
       }
@@ -70,19 +68,7 @@ class NewsViewModel {
   
   private func saveNews(_ news: [NewCodable]) {
     for new in news {
-      db.addNew(newCodable: new) { (success, error) in
-        if success {
-          print("SAVED: ", new.objectID)
-        } else {
-          if let error = error {
-            switch error {
-            case .database(let error):
-              print(new.objectID, error.localizedDescription)
-            case .validation(let msg):
-              print(new.objectID, msg)
-            }
-          }
-        }
+      db.addNew(newCodable: new) { (_, _) in
       }
     }
   }

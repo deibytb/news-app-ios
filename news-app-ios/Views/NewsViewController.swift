@@ -18,6 +18,8 @@ class NewsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.title = "News"
+    
     self.tableView.dataSource = self
     self.tableView.delegate = self
     
@@ -54,17 +56,13 @@ class NewsViewController: UIViewController {
     }
   }
   
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showNew",
+       let destination = segue.destination as? NewDetailViewController,
+       let viewModel = sender as? NewViewModel {
+      destination.viewModel = viewModel
+    }
+  }
 }
 
 extension NewsViewController: UITableViewDataSource {
@@ -85,7 +83,8 @@ extension NewsViewController: UITableViewDataSource {
 
 extension NewsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print(self.viewModel.news[indexPath.row].objectID)
+    let newViewModel = NewViewModel(new: self.viewModel.news[indexPath.row])
+    self.performSegue(withIdentifier: "showNew", sender: newViewModel)
   }
   
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
