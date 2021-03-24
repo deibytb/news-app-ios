@@ -19,6 +19,7 @@ struct NewCodable: Codable {
   var createdAt: String
   var url: String?
   var storyUrl: String?
+  var storyId: Double?
 }
 
 extension NewCodable {
@@ -30,6 +31,7 @@ extension NewCodable {
     self.createdAt = newDB.createdAt
     self.url = newDB.url
     self.storyUrl = newDB.storyUrl
+    self.storyId = Double(newDB.storyId ?? "0")
   }
 }
 

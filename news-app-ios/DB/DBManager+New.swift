@@ -44,6 +44,7 @@ extension DBManager {
         newNew.createdAt = newCodable.createdAt
         newNew.url = newCodable.url
         newNew.storyUrl = newCodable.storyUrl
+        newNew.storyId = String(format: "%f", newCodable.storyId ?? "")
         newNew.isHidden = false
         
         do {

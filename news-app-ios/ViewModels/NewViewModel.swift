@@ -15,7 +15,13 @@ class NewViewModel {
   init(new: NewCodable) {
     self.new = new
     
-    let urlString = (new.url ?? new.storyUrl) ?? "https://www.reign.cl/en/"
+    var urlString: String = ""
+    if let storyId = new.storyId {
+      urlString = "https://news.ycombinator.com/item?id=" + String(storyId)
+    } else {
+      urlString = (new.url ?? new.storyUrl) ?? "https://www.reign.cl/en/"
+    }
+    
     if let url = URL(string: urlString) {
       self.urlRequest = URLRequest(url: url)
     }
