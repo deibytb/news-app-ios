@@ -38,6 +38,8 @@ class NewsViewModel {
           }
         }
       }
+    } else {
+      self.loading?(false)
     }
   }
   
