@@ -5,12 +5,13 @@
         <attribute name="createdAt" attributeType="String"/>
         <attribute name="id" attributeType="String"/>
         <attribute name="isHidden" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="storyId" optional="YES" attributeType="String"/>
         <attribute name="storyTitle" optional="YES" attributeType="String"/>
         <attribute name="storyUrl" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="New" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="New" positionX="-63" positionY="-18" width="128" height="164"/>
     </elements>
 </model>

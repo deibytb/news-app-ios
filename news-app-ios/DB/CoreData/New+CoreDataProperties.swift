@@ -24,6 +24,7 @@ extension New {
     @NSManaged public var isHidden: Bool
     @NSManaged public var url: String?
     @NSManaged public var storyUrl: String?
+    @NSManaged public var storyId: String?
 
 }
 
