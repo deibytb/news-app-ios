@@ -29,6 +29,10 @@ class NewTableViewCell: UITableViewCell {
     }
     
     self.titleLabel.text = new.title ?? new.storyTitle ?? "No title"
-    self.autorTimestampLabel.text = "\(new.author) - \(new.createdAt)"
+    if let elapsedInterval = new.date()?.getElapsedInterval() {
+      self.autorTimestampLabel.text = "\(new.author) - \(elapsedInterval)"
+    } else {
+      self.autorTimestampLabel.text = new.author
+    }
   }
 }

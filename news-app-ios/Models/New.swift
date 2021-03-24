@@ -28,3 +28,14 @@ extension NewCodable {
     self.createdAt = newDB.createdAt
   }
 }
+
+extension NewCodable {
+  func date() -> Date? {
+    let formatter = DateFormatter()
+    formatter.calendar = Calendar(identifier: Calendar.Identifier.iso8601)
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.timeZone = TimeZone(secondsFromGMT: 0)
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+    return formatter.date(from: self.createdAt)
+  }
+}

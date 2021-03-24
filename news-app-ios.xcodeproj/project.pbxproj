@@ -27,6 +27,7 @@
 		A24BBDA9260B92F400F5774D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BBDA8260B92F400F5774D /* DBManager.swift */; };
 		A24BBDAE260B932800F5774D /* DBManager+New.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BBDAD260B932800F5774D /* DBManager+New.swift */; };
 		A24BBDB3260B97CC00F5774D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BBDB2260B97CC00F5774D /* Reachability.swift */; };
+		A24BBDB8260BB3D400F5774D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BBDB7260BB3D400F5774D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		A24BBDA8260B92F400F5774D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		A24BBDAD260B932800F5774D /* DBManager+New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBManager+New.swift"; sourceTree = "<group>"; };
 		A24BBDB2260B97CC00F5774D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		A24BBDB7260BB3D400F5774D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				A24BBD43260B80EB00F5774D /* Assets.xcassets */,
 				A24BBD45260B80EB00F5774D /* LaunchScreen.storyboard */,
 				A24BBD48260B80EB00F5774D /* Info.plist */,
+				A24BBDB7260BB3D400F5774D /* Extensions.swift */,
 			);
 			path = "news-app-ios";
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				A24BBDB3260B97CC00F5774D /* Reachability.swift in Sources */,
 				A24BBD9C260B920500F5774D /* New+CoreDataProperties.swift in Sources */,
 				A24BBD38260B80E800F5774D /* AppDelegate.swift in Sources */,
+				A24BBDB8260BB3D400F5774D /* Extensions.swift in Sources */,
 				A24BBDAE260B932800F5774D /* DBManager+New.swift in Sources */,
 				A24BBD8B260B85E400F5774D /* APIService.swift in Sources */,
 				A24BBD91260B864100F5774D /* New.swift in Sources */,

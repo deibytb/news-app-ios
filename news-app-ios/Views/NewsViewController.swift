@@ -33,11 +33,24 @@ class NewsViewController: UIViewController {
   }
   
   private func setupBindings() {
+    self.viewModel.loading = { loading in
+      DispatchQueue.main.async {
+        if loading {
+          self.refreshControl.beginRefreshing()
+        } else {
+          self.refreshControl.endRefreshing()
+        }
+      }
+    }
+    
     self.viewModel.didUpdate = {
       DispatchQueue.main.async {
         self.tableView.reloadData()
-        self.refreshControl.endRefreshing()
       }
+    }
+    
+    self.viewModel.errorMessage = { msg in
+      print(msg)
     }
   }
   
@@ -72,6 +85,17 @@ extension NewsViewController: UITableViewDataSource {
 
 extension NewsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    print(self.viewModel.news[indexPath.row].objectID)
+    print(self.viewModel.news[indexPath.row].objectID)
+  }
+  
+  func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, handler) in
+      self.viewModel.deleteNew(index: indexPath.row)
+      self.tableView.deleteRows(at: [indexPath], with: .automatic)
+      handler(true)
+    }
+    let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+    configuration.performsFirstActionWithFullSwipe = true
+    return configuration
   }
 }

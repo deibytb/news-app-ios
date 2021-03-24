@@ -18,7 +18,7 @@ extension New {
 
     @NSManaged public var id: String!
     @NSManaged public var title: String?
-    @NSManaged public var storyTitle: String!
+    @NSManaged public var storyTitle: String?
     @NSManaged public var author: String!
     @NSManaged public var createdAt: String!
     @NSManaged public var isHidden: Bool
@@ -27,4 +27,15 @@ extension New {
 
 extension New : Identifiable {
 
+}
+
+extension New {
+  func date() -> Date? {
+    let formatter = DateFormatter()
+    formatter.calendar = Calendar(identifier: Calendar.Identifier.iso8601)
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.timeZone = TimeZone(secondsFromGMT: 0)
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+    return formatter.date(from: self.createdAt)
+  }
 }

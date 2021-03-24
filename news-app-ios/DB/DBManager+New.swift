@@ -13,9 +13,18 @@ extension DBManager {
     let request = New.createFetchRequest()
     
     request.predicate = NSPredicate(format: "isHidden == %@", NSNumber(value: false))
-
+    
     do {
-      let news = try self.context.fetch(request)
+      var news = try self.context.fetch(request)
+      
+      news.sort { (new1, new2) -> Bool in
+        if let date1 = new1.date(), let date2 = new2.date() {
+          return date1.compare(date2) == .orderedDescending
+        } else {
+          return false
+        }
+      }
+      
       completion(news, nil)
     } catch {
       completion(nil, .database(error))
@@ -45,17 +54,13 @@ extension DBManager {
     }
   }
   
-  func updateNew(currentNewId: String, newCodable: NewCodable, completion: ((Bool, CustomError?) -> Void)) {
+  func hiddeNew(currentNewId: String, completion: ((Bool, CustomError?) -> Void)) {
     self.searchNewBy(id: currentNewId) { (new, error) in
       if let error = error {
         completion(false, error)
       }
       if let new = new {
-        new.id = newCodable.objectID
-        new.title = newCodable.title
-        new.storyTitle = newCodable.storyTitle
-        new.author = newCodable.author
-        new.createdAt = newCodable.createdAt
+        new.isHidden = true
         
         do {
           try self.context.save()
@@ -67,7 +72,7 @@ extension DBManager {
     }
   }
   
-  func deleteVehicle(newId: String, completion: ((Bool, CustomError?) -> Void)) {
+  func deleteNew(newId: String, completion: ((Bool, CustomError?) -> Void)) {
     self.searchNewBy(id: newId) { (new, error) in
       if let error = error {
         completion(false, error)
@@ -90,8 +95,8 @@ extension DBManager {
     request.predicate = NSPredicate(format: "id == %@", id)
     
     do {
-      let vehicle = try self.context.fetch(request).first
-      completion(vehicle, nil)
+      let new = try self.context.fetch(request).first
+      completion(new, nil)
     } catch {
       completion(nil, .database(error))
     }
