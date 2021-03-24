@@ -12,7 +12,7 @@ class NewTableViewCell: UITableViewCell {
   @IBOutlet weak private var titleLabel: UILabel!
   @IBOutlet weak private var autorTimestampLabel: UILabel!
   
-  var new: New? {
+  var new: NewCodable? {
     didSet {
       self.updateUI()
     }
@@ -28,7 +28,7 @@ class NewTableViewCell: UITableViewCell {
       return
     }
     
-    self.titleLabel.text = new.title ?? new.storyTitle
+    self.titleLabel.text = new.title ?? new.storyTitle ?? "No title"
     self.autorTimestampLabel.text = "\(new.author) - \(new.createdAt)"
   }
 }

@@ -7,13 +7,24 @@
 
 import Foundation
 
-struct News: Codable {
-  var hits: [New]
+struct NewsCodable: Codable {
+  var hits: [NewCodable]
 }
 
-struct New: Codable {
+struct NewCodable: Codable {
+  var objectID: String
   var title: String?
-  var storyTitle: String
+  var storyTitle: String?
   var author: String
   var createdAt: String
+}
+
+extension NewCodable {
+  init(fromDB newDB: New) {
+    self.objectID = newDB.id
+    self.title = newDB.title
+    self.storyTitle = newDB.storyTitle
+    self.author = newDB.author
+    self.createdAt = newDB.createdAt
+  }
 }

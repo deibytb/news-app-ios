@@ -72,6 +72,6 @@ extension NewsViewController: UITableViewDataSource {
 
 extension NewsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print(self.viewModel.news[indexPath.row].title ?? self.viewModel.news[indexPath.row].storyTitle)
+//    print(self.viewModel.news[indexPath.row].objectID)
   }
 }
